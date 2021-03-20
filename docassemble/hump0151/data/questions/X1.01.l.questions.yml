@@ -1,0 +1,71 @@
+---
+# Stores the description of the work that was done
+
+question: Describe the work you did
+fields:
+  - no label: JJHwork_completed
+    datatype: area
+---
+# Payment
+
+question: Payment
+fields:
+  - What was the agreed payment for the work?: JJHpayment_work
+    datatype: currency
+    min: 0
+---
+# Offer and Acceptance
+
+question: Did the you and the other person agree for this work to be done?
+fields:
+  - no label: JJHcertainty
+    datatype: radio
+    choices:
+      - Yes. The other person agreed to have this exact work done: JJHagree_exact
+      - Yes. The other person agreed to have some of this work done but there was other work that was not agreed to that wasn't done: JJHagree_inexact
+      - No. The other person did not agree to this work: JJHdisagree
+---
+# Consideration
+
+question: Payment for the Work
+subquestion: |
+  Did you and the other person agree how much you would pay for the work?
+fields:
+  - no label: JJHconsideration
+    datatype: radio
+    choices:
+      - Yes, they agreed to pay ${ currency(JJHpayment_work) } for the work: True
+      - No, we never reached a firm agreement on how much I should be paid: False
+---
+# Capacity
+
+question: Who did you contract with?
+subquestion: |
+  Was the other person an adult?
+yesno: JJHcapacity
+---
+# Written contract
+
+question: Written Contract
+subquestion: |
+  A 'written contract' can mean a formal contract document.
+  It can also mean any emails, texts or messages you send
+  or receive about the contract.
+  If your
+  messages contain information about:
+
+  - what work was meant to be done
+  - how much was going to be paid for that work
+  - who was going to do the work and who was going to pay
+
+  Then those messages may be enough to be a 'written contract'.
+fields:
+  - Do you or the other person have a 'written contract'?: JJHwritten_contract
+    datatype: yesnoradio
+---
+code: |
+  if JJHcertainty == 'JJHagree_exact' and JJHconsideration == True and JJHcapacity == True:
+    JJHcontract_exists = True
+  else:
+    JJHcontract_exists = False
+---

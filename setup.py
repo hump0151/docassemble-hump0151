@@ -45,7 +45,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
 setup(name='docassemble.hump0151',
       version='0.0.1',
       description=('A docassemble extension.'),
-      long_description='# docassemble.hump0151\n\nA docassemble extension.\n\n## Author\n\nJack Humphries, hump0151@flinders.edu.au\n\n',
+      long_description='# docassemble.hump0151\r\n\r\nA docassemble extension.\r\n\r\n## Author\r\n\r\nJack Humphries, hump0151@flinders.edu.au\r\n\r\n',
       long_description_content_type='text/markdown',
       author='Jack Humphries',
       author_email='hump0151@flinders.edu.au',
