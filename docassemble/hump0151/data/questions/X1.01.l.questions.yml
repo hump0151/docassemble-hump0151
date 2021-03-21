@@ -63,9 +63,3 @@ fields:
   - Do you or the other person have a 'written contract'?: JJHwritten_contract
     datatype: yesnoradio
 ---
-code: |
-  if JJHcertainty == 'JJHagree_exact' and JJHconsideration == True and JJHcapacity == True:
-    JJHcontract_exists = True
-  else:
-    JJHcontract_exists = False
----

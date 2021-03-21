@@ -47,7 +47,6 @@ code: |
     MJFwork_requested
     MJFpayment_agreed
 
-    # but here is the RHS
     if MJFcertainty == 'MJFagree_exact' and MJFconsideration == True and MJFcapacity == True:
       MJFcontract_exists = True
     else:
