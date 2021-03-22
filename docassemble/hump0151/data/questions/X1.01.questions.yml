@@ -9,7 +9,7 @@ fields:
       - I paid for work that wasn't done: MJFpromisee
       - Somebody didn't pay me for work that I did: MJFpromisor
 ---
-# Stores the description of the work that was requested
+# Description of the work that was requested
 
 question: Describe the work you wanted done
 fields:

@@ -19,20 +19,20 @@ under: |
 ---
 # Offer and Acceptance
 
-question: Did the you and the other person agree for this work to be done?
+question: Did you and the other person agree for this work to be done?
 fields:
   - no label: JJHcertainty
     datatype: radio
     choices:
       - Yes. The other person agreed to have this exact work done: JJHagree_exact
-      - Yes. The other person agreed to have some of this work done but there was other work that was not agreed to that wasn't done: JJHagree_inexact
+      - Yes. The other person agreed to have some of this work done but there was other work that was not agreed to that was done: JJHagree_inexact
       - No. The other person did not agree to this work: JJHdisagree
 ---
 # Consideration
 
 question: Payment for the Work
 subquestion: |
-  Did you and the other person agree how much you would pay for the work?
+  Did you and the other person agree how much you would be paid for the work?
 fields:
   - no label: JJHconsideration
     datatype: radio

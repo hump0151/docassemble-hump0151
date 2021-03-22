@@ -3,7 +3,7 @@
 objects:
   - endpoints: DADict
 ---
-# Displays an error message
+# Error message
 event: endpoints['error_screen']
 question: Error
 subquestion: |
