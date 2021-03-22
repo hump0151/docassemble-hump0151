@@ -1,5 +1,5 @@
 ---
-# Stores the description of the work that was done
+# Description of the work that was done
 
 question: Describe the work you did
 fields:
@@ -13,6 +13,9 @@ fields:
   - What was the agreed payment for the work?: JJHpayment_work
     datatype: currency
     min: 0
+under: |
+  If you have not yet agreed on a price, or have not discussed a price,
+  please enter $0 into the box above.
 ---
 # Offer and Acceptance
 
