@@ -1,5 +1,5 @@
 ---
-question: ""
+question: SACAT Homelessness Advisory App
 subquestion: |
   Welcome to the SACAT Homelessness Advisor. This application is designed
   to help you find services that may assist you if you are facing homelessness.
@@ -11,6 +11,21 @@ subquestion: |
   
   Do you accept these terms?
 yesno: HAAeligible
+css: |
+  <style>
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: #4C586F;
+  background-color: #EBECED;
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-top: 0px
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-bottom: 0px
+  }
+  </style>
 ---
 question: |
   Do you identify as:
@@ -21,10 +36,40 @@ fields:
      - "Female": female
      - "Male": male
      - "Other/Prefer not to Specify": other
+css: |
+  <style>
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: #4C586F;
+  background-color: #EBECED;
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-top: 0px
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-bottom: 0px
+  }
+  </style>
 ---
 question: |
   Do you have pets?
 yesno: HAApets
+css: |
+  <style>
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: #4C586F;
+  background-color: #EBECED;
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-top: 0px
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-bottom: 0px
+  }
+  </style>
 ---
 question: |
   Are you seeking accommodation on your own or with your family?
@@ -34,6 +79,21 @@ fields:
     choices:
      - "I am seeking accommodation on my own": singles
      - "I am seeking accommodation with my family, or I am pregnant": family
+css: |
+  <style>
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: #4C586F;
+  background-color: #EBECED;
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-top: 0px
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-bottom: 0px
+  }
+  </style>
 ---
 question: |
   Do you live in the Adelaide Metropolitan Area?
@@ -43,10 +103,40 @@ under: |
     Below is a map of the Adelaide Metropolitan Area
 
     [FILE X2.01.Metro_Map.jpg, 400px]
+css: |
+  <style>
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: #4C586F;
+  background-color: #EBECED;
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-top: 0px
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-bottom: 0px
+  }
+  </style>
 ---
 question: |
   Do you identify as Aboriginal or Torres Strait Islander?
 yesno: HAAabor
+css: |
+  <style>
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: #4C586F;
+  background-color: #EBECED;
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-top: 0px
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-bottom: 0px
+  }
+  </style>
 ---
 question: |
   What is your age?
@@ -58,4 +148,35 @@ fields:
   validation messages: 
     max: |
       Please enter an age between 0 and 100
+css: |
+  <style>
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: #4C586F;
+  background-color: #EBECED;
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-top: 0px
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-bottom: 0px
+  }
+  
+  label.col-md-4.col-form-label.da-form-label.datext-right{
+  text-align: left
+  }
+  label.col-md-4.col-form-label.da-form-label.datext-right{
+  max-width: 9.1%
+  }
+  div.col-md-8.dafieldpart{
+  max-width: 100%
+  }
+  div.col-md-8.dafieldpart{
+  flex: 1 0 66.666667%
+  }
+  label.col-md-4.col-form-label.da-form-label.datext-right::after{
+  position: unset
+  }
+  </style>
 ---

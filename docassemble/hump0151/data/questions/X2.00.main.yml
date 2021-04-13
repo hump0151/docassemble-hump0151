@@ -10,7 +10,7 @@ metadata:
 ---
 default screen parts:
   post: |
-    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
+    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse; justify-content: center;">
     <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
     </div>
     <div style="margin: 5px; text-align: right">
@@ -42,7 +42,7 @@ code: |
   # some custom HTML.  The string below creates the HTML and 
   # inserts into it the logo contained in the file SACATlogo using
   # the python format() method 
-  HAAlogostring = '<div class="media"><img src="{}" class="mr-3" height="50"><div class="media-body"></div></div>'.format(SACATlogo.url_for())
+  HAAlogostring = '<div class="media"><img src="{}" class="mr-3" height="40"><div class="media-body"></div></div>'.format(SACATlogo.url_for())
 
   # Once we've created the string we use set_parts() to set our new logo metadata
   set_parts(logo=HAAlogostring)
@@ -62,7 +62,7 @@ code: |
     endpoints['ineligible']
 ---
 event: endpoints['final_screen']
-question: ""
+question: SACAT Homelessness Advisory App
 subquestion:  |
   % if HAApets:
   ### Services for Pets
@@ -78,36 +78,16 @@ subquestion:  |
   % endif
   
   % if HAAabor:
-  ###Services for Indigenous Peoples
+  ### Services for Indigenous Peoples
   %for HAAdisplay_entry in HAAdisplay_atsi:
-  ${ HAAdisplay_entry['display_record'].show() }
+  ${ HAAdisplay_entry['display_record'].show() }<br>
   %endfor
   % endif
   
-  % if HAAgender == 'male':
-  ### Services for Men
-  %for HAAdisplay_entry in HAAdisplay_gender:
-  ${ HAAdisplay_entry['display_record'].show() }
-  %endfor
-  % elif HAAgender == 'female':
-  ### Services for Women
-  %for HAAdisplay_entry in HAAdisplay_gender:
-  ${ HAAdisplay_entry['display_record'].show() }
-  %endfor
+  % if HAAabor == False and HAApets == False:
+  ### Available Support Services
   % else:
-  % endif
-  
-  
-  % if HAAfamily == 'singles':
-  ### Services for You
-  %for HAAdisplay_entry in HAAdisplay_fam:
-  ${ HAAdisplay_entry['display_record'].show() }
-  %endfor
-  % else:
-  ### Services for You and Your Family
-  %for HAAdisplay_entry in HAAdisplay_fam:
-  ${ HAAdisplay_entry['display_record'].show() }
-  %endfor
+  ### Other Available Support Services
   % endif
   
   Based on your answers, you might be eligible for support from the following agencies.
@@ -115,13 +95,100 @@ subquestion:  |
   You should contact them as soon as you can to try an arrange emergency housing.
   
   %for HAAdisplay_entry in HAAdisplay_other:
-  ${ HAAdisplay_entry['display_record'].show() }
+  ${ HAAdisplay_entry['display_record'].show() }<br>
   %endfor
   
   ### Community Housing
   
   Further information on long term accommodation can be found 
   on the [SA.GOV.AU website](https://www.sa.gov.au/topics/housing/public-and-community-housing/list-of-housing-associations).  
+
+css: |
+  <style>
+  a {
+  color: #3E3E3B;
+  }
+  
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: #4C586F;
+  background-color: #EBECED;
+  }
+  
+  div.da-attachment-alert.da-attachment-alert-single.alert.alert-success{
+  background-color: gainsboro;
+  }
+  div.da-attachment-alert.da-attachment-alert-single.alert.alert-success{
+  color: #4C586F
+  }
+  div.da-attachment-alert.da-attachment-alert-single.alert.alert-success{
+  border-color: #4C586F
+  }
+  
+  a#dadownload-tab0.nav-link.active{
+  background-color: gainsboro;
+  }
+  a#dadownload-tab0.nav-link.active{
+  border-top-color: #dee2e6
+  }
+  
+  a#dadownload-tab0.nav-link.active{
+  border-right-color: #dee2e6
+  }
+  a#dadownload-tab0.nav-link.active{
+  border-left-color: #dee2e6
+  }
+  a#dadownload-tab0.nav-link.active{
+  border-bottom-color: #dee2e6
+  }
+  
+  div#daheadingOne.card-header{
+  background-color: gainsboro;
+  }
+  form#daemailform.form-horizontal{
+  background-color: whitesmoke;
+  }
+  div.card-body{
+  background-color: whitesmoke;
+  }
+  
+  table#dareadability-question.table{
+  color: #CBC5C1;
+  }
+  
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-top: 0px
+  }
+  div.navbar.fixed-top.navbar-dark.bg-dark{
+  padding-bottom: 0px
+  }
+  
+  button.btn.btn-primary{
+  background-color: green
+  }
+  button.btn.btn-primary{
+  border-color: green
+  }
+  
+  button.btn.btn-da.btn-danger{
+  background-color: red
+  }
+  button.btn.btn-da.btn-danger{
+  border-color: red
+  }
+  
+  button.btn.btn-da.btn-warning{
+  background-color: gold
+  }
+  button.btn.btn-da.btn-warning{
+  border-color: gold
+  }
+  
+  label.col-md-4.col-form-label.da-form-label.datext-right{
+  max-width: 66%
+  </style>
+
 attachment code: |
   [HAAprintout]
 buttons:
@@ -134,7 +201,7 @@ attachment:
     filename: Result Printout
     valid formats:
       - pdf
-    docx template file: X2.01.HAA_print_out.docx
+    docx template file: X2.01.HAA_print_out_2.docx
     variable name: HAAprintout
 ---
 event: endpoints['ineligible']

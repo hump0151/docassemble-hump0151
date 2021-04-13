@@ -56,41 +56,13 @@ code: |
   for HAAagency in HAAqualifying_agencies:
     if HAAagency.item('printed') == True:
       pass
-    elif HAAagency.item('atsi_test') == True:
+    elif HAAagency.item('indigenous') == True:
       HAAdisplay_atsi.append(HAAagency)
       HAAagency['printed'] = True
     else:
-      pass
-  
+      pass 
   HAAdisplay_atsi.gathered = True
----
-# Gender
-code: |
-  HAAdisplay_gender.clear()
-  for HAAagency in HAAqualifying_agencies:
-    if HAAagency.item('printed') == True:
-      pass
-    elif HAAagency.item('gender_test') == True:
-      HAAdisplay_gender.append(HAAagency)
-      HAAagency['printed'] = True
-    else:
-      pass
-  
-  HAAdisplay_gender.gathered = True
----
-# Family or Single
-code: |
-  HAAdisplay_fam.clear()
-  for HAAagency in HAAqualifying_agencies:
-    if HAAagency.item('printed') == True:
-      pass
-    elif HAAagency.item('families_test') == True:
-      HAAdisplay_fam.append(HAAagency)
-      HAAagency['printed'] = True
-    else:
-      pass
-  
-  HAAdisplay_fam.gathered = True
+
 ---
 # Finally, we display everything else.  Everything else
 # is every record in HAAqualifying_agencies that has
@@ -104,7 +76,7 @@ code: |
       pass
     else:
       HAAdisplay_other.append(HAAagency)
-      HAAagency['printed'] = True
+      HAAagency['printed'] = True  
       # I used this for debugging
       # HAAdisplay_other.append('printed: {}: attr_def: {} item(printed): {}[BR]'.format(HAAagency['service'], HAAagency.attribute_defined('printed'), HAAagency.item('printed')))  
   HAAdisplay_other.gathered = True
